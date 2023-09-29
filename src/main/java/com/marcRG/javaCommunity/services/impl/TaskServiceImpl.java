@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @EnableAutoConfiguration
 @EnableWebMvc
+
 public class TaskServiceImpl implements TaskServices {
     private TaskRepository taskRepository;
     @Autowired
@@ -37,6 +38,7 @@ public class TaskServiceImpl implements TaskServices {
             log.error("la description que vous passer en parametre est null");
             return null;
         }
+
         Optional<Task> taskDTO= taskRepository.findTaskByDescription(description);
         return taskDTO.map(TaskDTO::fromEntity)
                 .orElseThrow(()-> new EntityNotFoundException("tache non trouvé pour cette description", ErrorCodes.Task_Not_Found));
@@ -61,7 +63,7 @@ public class TaskServiceImpl implements TaskServices {
     public TaskDTO save(TaskDTO taskDTO) {
         List<String> error= TaskValidator.validate(taskDTO);
         if(!error.isEmpty()){
-            log.error("votre objet que vous passer");
+            log.error("votre objet que vous passer est null {}",taskDTO);
             throw new InvalidEntityException("vous passer une tache mal formé dans lequel des informations manque",ErrorCodes.Task_Not_Valid,error);
         }
         return TaskDTO.fromEntity(

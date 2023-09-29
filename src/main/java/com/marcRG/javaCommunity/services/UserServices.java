@@ -13,6 +13,5 @@ public interface UserServices {
     List<UserDTO> findAll();
     UserDTO findByUsername(String Username);
 
-    AuthenticationResponse authenticate(AuthenticationRequest request);
     void delete(Integer id);
 }

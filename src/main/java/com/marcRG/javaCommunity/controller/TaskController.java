@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-
 @CrossOrigin(origins = "*")
 public class TaskController implements TaskAPI {
     private TaskServices taskServices;

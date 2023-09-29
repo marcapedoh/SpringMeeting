@@ -7,6 +7,7 @@ import jakarta.persistence.ManyToOne;
 import lombok.*;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -20,7 +21,7 @@ public class Task extends IncrementalClass{
     @Column(name = "descriptionTask",nullable = false)
     private String description;
     @Column(name = "dateTask",nullable = false)
-    private Instant dateTask;
+    private LocalDateTime dateTask;
 
     @ManyToOne
     @JoinColumn(name = "iduser")

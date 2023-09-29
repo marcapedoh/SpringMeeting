@@ -48,10 +48,10 @@ public class UserController implements UserAPI {
         return userServices.findByUsername(Username);
     }
 
-    @Override
+   /* @Override
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
         return userServices.authenticate(request);
-    }
+    }*/
 
     @Override
     public void delete(Integer id) {

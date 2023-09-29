@@ -104,7 +104,7 @@ public class UserServiceImpl implements UserServices {
                 .orElseThrow(()->new EntityNotFoundException("User not found",ErrorCodes.User_Not_Found));
     }
 
-    @Override
+   /* @Override
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
         log.warn("drjdtkjyfukyuj bonsoirrrrrrrrrrrrrrrrrrrrrrrr!!");
         log.warn("voila les parametre",request.getPassword());
@@ -122,7 +122,7 @@ public class UserServiceImpl implements UserServices {
                 .token(jwtToken)
                 .build();
     }
-
+*/
     @Override
     public void delete(Integer id) {
         if(id==null){

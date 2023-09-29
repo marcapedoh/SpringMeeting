@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -17,7 +18,7 @@ import java.time.Instant;
 public class TaskDTO {
     private Integer id;
     private String description;
-    private Instant dateTask;
+    private LocalDateTime dateTask;
     @JsonIgnore
     private User user;
 

@@ -50,12 +50,12 @@ public interface UserAPI {
     })
     UserDTO findByUsername(@PathVariable("Username") String Username);
 
-    @PostMapping(value = APP_ROOT+"/auth/authenticate",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    /*@PostMapping(value = APP_ROOT+"/auth/authenticate",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "authentifier un utilisateur", notes=" cette methode permet d'authentifier un utilisateur", response = AuthenticationResponse.class)
     @ApiResponses(value={
             @ApiResponse(code = 200, message = "utilisateur authentifier avec succès!")
     })
-    AuthenticationResponse authenticate(@RequestBody AuthenticationRequest request);
+    AuthenticationResponse authenticate(@RequestBody AuthenticationRequest request);*/
     @DeleteMapping(value = APP_ROOT+"/user/delete/{id}")
     @ApiOperation(value = "supprimer user", notes = "cette methode permet de supprimer un utilisateur",response = UserDTO.class)
     @ApiResponses(value = {
